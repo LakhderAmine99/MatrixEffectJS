@@ -8,6 +8,8 @@ Take a look on the demo folder.
 
 This is a simple example :
 
+``` javascript
+
     const wrapper = document.querySelector('.wrapper');
 
     const settings = {
@@ -20,6 +22,8 @@ This is a simple example :
     let matrixEffect = new MatrixEffect(wrapper,settings);
 
     window.ondblclick = () => matrixEffect.start();
+    
+```
 
 ## About
 
