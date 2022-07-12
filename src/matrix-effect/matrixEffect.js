@@ -5,7 +5,6 @@ import Canvas from "./canvas/canvas.js";
  * @module MatrixEffect
  * @class
  */
-
 class MatrixEffect {
 
     /**
@@ -34,6 +33,11 @@ class MatrixEffect {
     #timeout = 0;
 
     /**
+     * @type {boolean} #isRunning
+     */
+    #isRunning = false;
+
+    /**
      * 
      * @param {object} settings 
      */
@@ -44,18 +48,21 @@ class MatrixEffect {
         this.#wrapper = wrapper || document.body;
         this.#settings = settings || {};
 
+        this.#settings.opacity = settings.opacity || 0.05;
+        this.#settings.timeOut = settings.timeOut || 50;
+
         this.#wrapper.appendChild(this.#canvas);
     };
 
     /**
      * 
      * @param {number[]} columnValues 
-     * @param {this} ref 
+     * @param {this} _this 
      * @private
      */
     #buildMatrix(_this){
 
-        Canvas.fillRect();
+        Canvas.fillRect(0,0,_this.#canvas.width,_this.#canvas.height,_this.#settings.opacity);
 
         _this.#columnValues.map((posY,index) => {
 
@@ -88,23 +95,30 @@ class MatrixEffect {
             this.#columnValues.push(0);
         }
 
-        this.#timeout = setInterval(() => this.#buildMatrix(_this),50);
+        this.#timeout = setInterval(() => this.#buildMatrix(_this),this.#settings.timeOut);
     }
 
     /**
-     * 
+     * @description Start the matrix animation effect.
+     * @public
      */
     start(){
 
-        this.#runAnimation();
+        if(!this.#isRunning){
+
+            this.#runAnimation();
+            this.#isRunning = true;
+        }
     }
 
     /**
-     * 
+     * @description Pause the matrix animation effect.
+     * @public
      */
     stop(){
-
+        
         window.clearInterval(this.#timeout);
+        this.#isRunning = false;
     }
 };
 

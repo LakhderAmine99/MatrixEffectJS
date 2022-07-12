@@ -17,7 +17,9 @@ function MatrixEffectDemo(){
             
             color:"#66ff00",
             fontSize:16,
-            fontName:"monospace"
+            fontName:"monospace",
+            opacity:0.05,
+            timeOut:50
         };
 
         let matrixEffect = new MatrixEffect(wrapper,settings);

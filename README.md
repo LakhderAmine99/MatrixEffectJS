@@ -8,9 +8,17 @@ Take a look on the demo folder.
 
 This is a simple example :
 
+- Get the wrapper element from your html file if no wrapper has specified the document.body will be selected:
+
 ``` javascript
 
     const wrapper = document.querySelector('.wrapper');
+
+```
+
+- Set up the settings object with the styles that you wish to use:
+
+``` javascript
 
     const settings = {
             
@@ -19,12 +27,20 @@ This is a simple example :
         fontName:"monospace"
     };
 
+```
+
+- Create the matrixEffect object and call the start method to start the matrix effect animation:
+
+``` javascript
+
     let matrixEffect = new MatrixEffect(wrapper,settings);
 
     window.ondblclick = () => matrixEffect.start();
     
 ```
 
-## About
+- If there's anything to modify or to optimize feel free to let me know or just go through it :).
 
-To Be Complated...
+## Demo In The Browser
+
+<img src="https://github.com/LakhderAmine99/MatrixEffectJS/blob/main/screenshots/1.png">

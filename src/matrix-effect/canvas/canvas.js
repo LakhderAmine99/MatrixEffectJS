@@ -3,7 +3,6 @@
  * @class
  * @module Canvas
  */
-
 class Canvas {
 
     /**
@@ -21,9 +20,10 @@ class Canvas {
      */
     #options = null;
 
-    constructor(){
-
-    }
+    /**
+     * @empty
+     */
+    constructor(){}
 
     /**
      * 
@@ -47,6 +47,14 @@ class Canvas {
         return this.#canvas;
     }
 
+    /**
+     * 
+     * @param {number} x 
+     * @param {number} y 
+     * @param {number} width 
+     * @param {number} height 
+     * @param {number} opacity 
+     */
     fillRect(x=0,y=0,width=this.#canvas.width,height=this.#canvas.height,opacity=0.05){
 
         this.context.fillStyle = "rgba(0,0,0,"+opacity+")";
@@ -65,15 +73,18 @@ class Canvas {
      */
     fillText(text,x,y,size){
 
-        // this.clearRect();
-
         this.context.beginPath();
-
         this.context.fillText(text,x,y,size);
-
         this.context.closePath();
     }
 
+    /**
+     * 
+     * @param {number} x 
+     * @param {number} y 
+     * @param {number} width 
+     * @param {number} height 
+     */
     clearRect(x=0,y=0,width=this.#canvas.width,height=this.#canvas.height){
 
         this.context.clearRect(x,y,width,height);
