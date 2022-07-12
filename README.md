@@ -12,8 +12,9 @@ This is a simple example :
 
 ``` javascript
 
-    const wrapper = document.querySelector('.wrapper');
+const wrapper = document.querySelector('.wrapper');
 
+<<<<<<< HEAD
 ```
 
 - Set up the settings object with the styles that you wish to use:
@@ -21,12 +22,16 @@ This is a simple example :
 ``` javascript
 
     const settings = {
+=======
+const settings = {
+>>>>>>> 27efc1a600c5d2c2f54950e500c080cd859a91ee
             
-        color:"#66ff00",
-        fontSize:16,
-        fontName:"monospace"
-    };
+    color:"#66ff00",
+    fontSize:16,
+    fontName:"monospace"    
+};
 
+<<<<<<< HEAD
 ```
 
 - Create the matrixEffect object and call the start method to start the matrix effect animation:
@@ -34,8 +39,11 @@ This is a simple example :
 ``` javascript
 
     let matrixEffect = new MatrixEffect(wrapper,settings);
+=======
+let matrixEffect = new MatrixEffect(wrapper,settings);
+>>>>>>> 27efc1a600c5d2c2f54950e500c080cd859a91ee
 
-    window.ondblclick = () => matrixEffect.start();
+window.ondblclick = () => matrixEffect.start();
     
 ```
 
