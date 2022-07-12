@@ -10,18 +10,18 @@ This is a simple example :
 
 ``` javascript
 
-    const wrapper = document.querySelector('.wrapper');
+const wrapper = document.querySelector('.wrapper');
 
-    const settings = {
+const settings = {
             
-        color:"#66ff00",
-        fontSize:16,
-        fontName:"monospace"
-    };
+    color:"#66ff00",
+    fontSize:16,
+    fontName:"monospace"    
+};
 
-    let matrixEffect = new MatrixEffect(wrapper,settings);
+let matrixEffect = new MatrixEffect(wrapper,settings);
 
-    window.ondblclick = () => matrixEffect.start();
+window.ondblclick = () => matrixEffect.start();
     
 ```
 
