@@ -57,7 +57,6 @@ class MatrixEffect {
     /**
      * 
      * @param {number[]} columnValues 
-     * @param {this} _this 
      * @private
      */
     #buildMatrix(){
