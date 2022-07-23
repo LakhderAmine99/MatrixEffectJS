@@ -45,4 +45,4 @@ window.ondblclick = () => matrixEffect.start();
 
 ## Demo In The Browser
 
-<img src="https://github.com/LakhderAmine99/MatrixEffectJS/blob/main/screenshots/1.png">
+<img src="https://github.com/LakhderAmine99/MatrixEffectJS/blob/main/screenshots/_1.png">

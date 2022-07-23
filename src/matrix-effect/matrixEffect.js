@@ -60,24 +60,24 @@ class MatrixEffect {
      * @param {this} _this 
      * @private
      */
-    #buildMatrix(_this){
+    #buildMatrix(){
 
-        Canvas.fillRect(0,0,_this.#canvas.width,_this.#canvas.height,_this.#settings.opacity);
+        Canvas.fillRect(0,0,this.#canvas.width,this.#canvas.height,this.#settings.opacity);
 
-        _this.#columnValues.map((posY,index) => {
+        this.#columnValues.map((posY,index) => {
 
             let text = Math.round(Math.random());
             let posX = (index * 10);
             
             Canvas.fillText(text,posX,posY);
 
-            if (posY > 650 + Math.random() * _this.#canvas.height){
+            if (posY > 650 + Math.random() * this.#canvas.height){
                 
-                _this.#columnValues[index] = 0;
+                this.#columnValues[index] = 0;
 
             } else {
 
-                _this.#columnValues[index] = posY + 16;
+                this.#columnValues[index] = posY + 16;
             }
         });
     }
@@ -88,14 +88,13 @@ class MatrixEffect {
     #runAnimation(){
 
         let width = Math.round(this.#canvas.width/10);
-        let _this = this;
 
         for(let x=0; x<width; x++){
 
             this.#columnValues.push(0);
         }
 
-        this.#timeout = setInterval(() => this.#buildMatrix(_this),this.#settings.timeOut);
+        this.#timeout = setInterval(() => this.#buildMatrix(this),this.#settings.timeOut);
     }
 
     /**

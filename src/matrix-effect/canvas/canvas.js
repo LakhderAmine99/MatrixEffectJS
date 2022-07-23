@@ -90,6 +90,9 @@ class Canvas {
         this.context.clearRect(x,y,width,height);
     }
 
+    /**
+     * @getter
+     */
     get context(){
         return this.#renderingContext;
     }

@@ -5,7 +5,6 @@ function MatrixEffectDemo(){
     this.run = function(){  
 
         console.log("Application is up and running...");
-
         init();
     };
 
